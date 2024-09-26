@@ -1,14 +1,14 @@
 
 export class StringCalculator {
 
-   /**
-   * Adds the numbers represented as a string.
-   * @param {string} numbers - A string containing numbers to be added,
-   * separated by commas, newlines, or custom delimiters.
-   * @returns {number} The sum of the numbers.
-   * @throws {Error} If any negative numbers are present in the input.
-   */
-    add(numbers: string):number {
+    /**
+    * Adds the numbers represented as a string.
+    * @param {string} numbers - A string containing numbers to be added,
+    * separated by commas, newlines, or custom delimiters.
+    * @returns {number} The sum of the numbers.
+    * @throws {Error} If any negative numbers are present in the input.
+    */
+    add(numbers: string): number {
         if (numbers === "") return 0;
 
         let delimiter = /[\n,]/;
@@ -19,12 +19,12 @@ export class StringCalculator {
         }
 
         const numArray = numbers.split(delimiter).map(num => Number(num));
-       
+
         const negatives = numArray.filter(num => num < 0);
         if (negatives.length > 0) {
-          throw new Error(`negative numbers not allowed: ${negatives.join(",")}`);
+            throw new Error(`Negative numbers not allowed: ${negatives.join(",")}`);
         }
-    
+
         return numArray.reduce((acc, curr) => acc + curr, 0);
 
     }
