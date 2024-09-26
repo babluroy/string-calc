@@ -15,10 +15,13 @@ export default function Home() {
     try {
       setResult(calculator.add(numbers));
       setError(null);
-    } catch (e: any) {
-      setError(e.message);
-      setResult(null);
+    } catch (e: unknown) {
+      if (e instanceof Error) {
+        setError(e.message); 
+    } else {
+        setError('An unknown error occurred');
     }
+   }
   };
 
   return (

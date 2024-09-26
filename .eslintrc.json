@@ -1,3 +1,14 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "extends": ["next/core-web-vitals", "next/typescript"],
+  "rules": {
+      "@typescript-eslint/no-require-imports": "off"
+  },
+  "overrides": [
+      {
+          "files": ["*.test.ts", "*.spec.ts"],
+          "rules": {
+              "@typescript-eslint/no-require-imports": "off"
+          }
+      }
+  ]
 }
