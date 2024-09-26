@@ -10,5 +10,9 @@ describe('String Calculator', () => {
     test('returns 0 for an empty string', () => {
         expect(calculator.add("")).toBe(0);
     });
-    
+
+    test('returns 1 for input "1"', () => {
+        expect(calculator.add("1")).toBe(1);
+    });
+
 });
